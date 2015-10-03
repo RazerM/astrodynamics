@@ -1,5 +1,5 @@
 cache:
-  - %CSIDL_LOCAL_APPDATA%\pip\Cache -> appveyor.yml
+  - '%CSIDL_LOCAL_APPDATA%\pip\Cache -> appveyor.yml'
 
 environment:
 
