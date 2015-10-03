@@ -82,4 +82,4 @@ function main () {
     InstallPackage $env:PYTHON wheel
 }
 
-mainp
+main
