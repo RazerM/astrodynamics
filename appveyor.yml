@@ -69,7 +69,7 @@ environment:
 
 
 init:
-  - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
+  - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH% %CSIDL_LOCAL_APPDATA%"
 
 install:
   - "powershell .appveyor\\install.ps1"
