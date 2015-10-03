@@ -1,3 +1,6 @@
+cache:
+  - '%CSIDL_LOCAL_APPDATA%\pip\Cache' -> appveyor.yml
+
 environment:
 
   global:
