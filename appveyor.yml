@@ -82,3 +82,6 @@ build: off
 
 test_script:
   - "%WITH_COMPILER% %PYTHON%/Scripts/tox.exe"
+
+after_test:
+  - ps: ls c:/Users/appveyor/pip/wheels
