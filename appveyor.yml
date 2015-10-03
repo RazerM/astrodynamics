@@ -1,5 +1,5 @@
 cache:
-  - '%CSIDL_LOCAL_APPDATA%\pip\Cache -> appveyor.yml'
+  - C:\Users\appveyor\pip\wheels
 
 environment:
 
@@ -69,9 +69,13 @@ environment:
 
 
 init:
-  - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH% %CSIDL_LOCAL_APPDATA%"
+  - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
 
 install:
+  - ps: if (Test-Path c:/Users/appveyor/pip/wheels) { ls c:/Users/appveyor/pip/wheels } else { echo Wheelhouse missing. }
+  - ps: New-Item -Force -ItemType directory -Path "c:/Users/appveyor/pip/wheels"
+  - ps: ls c:/Users/appveyor/pip/wheels
+  - ps: Copy-Item -Path "./.appveyor/pip.ini" -Destination "c:/Users/appveyor/pip/pip.ini" -Force
   - "powershell .appveyor\\install.ps1"
 
 build: off
