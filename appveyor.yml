@@ -1,5 +1,5 @@
 cache:
-  - C:/Users/appveyor/AppData/Local/pip/Cache/wheels
+  - C:\Users\appveyor\AppData\Local\pip\Cache\wheels
 
 environment:
 
