@@ -49,6 +49,9 @@ matrix:
       osx_image: xcode7
       env: TOXENV=py35
 
+before_install:
+  - ./.travis/before_install.sh
+
 install:
   - ./.travis/install.sh
 
