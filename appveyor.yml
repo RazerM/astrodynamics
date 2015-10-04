@@ -67,11 +67,17 @@ environment:
 
 
 init:
-  - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
+  - set PATH=%PYTHON%;%PYTHON%\Scripts;%PATH%
+  # Show all environment variables
+  - set
 
 install:
   - ps: ls -R C:/Users/appveyor/AppData/Local/pip/Cache/wheels
   - "powershell .appveyor\\install.ps1"
+  - which python
+  - which pip
+  - which codecov
+  - which coverage
 
 build: off
 
