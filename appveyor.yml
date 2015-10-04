@@ -81,3 +81,6 @@ test_script:
   - "%WITH_COMPILER% %PYTHON%/Scripts/tox.exe -v"
   - ps: ls -R C:/Users/appveyor/AppData/Local/pip/Cache/wheels
   - "type C:\\projects\\astrodynamics\\.tox\\%TOXENV%\\log\\%TOXENV%-2.log"
+
+after_test:
+  - "%PYTHON%/Scripts/codecov.exe"
