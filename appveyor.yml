@@ -28,46 +28,6 @@ environment:
       TOXENV: "py27"
       TOXPYTHON: "C:\\Python27-x64\\python.exe"
 
-    - PYTHON: "C:\\Python33"
-      PYTHON_VERSION: "3.3.x" # currently 3.3.5
-      PYTHON_ARCH: "32"
-      TOXENV: "py33"
-      TOXPYTHON: "C:\\Python33\\python.exe"
-
-    - PYTHON: "C:\\Python33-x64"
-      PYTHON_VERSION: "3.3.x" # currently 3.3.5
-      PYTHON_ARCH: "64"
-      WINDOWS_SDK_VERSION: "v7.1"
-      TOXENV: "py33"
-      TOXPYTHON: "C:\\Python33-x64\\python.exe"
-
-    - PYTHON: "C:\\Python34"
-      PYTHON_VERSION: "3.4.x" # currently 3.4.3
-      PYTHON_ARCH: "32"
-      TOXENV: "py34"
-      TOXPYTHON: "C:\\Python34\\python.exe"
-
-    - PYTHON: "C:\\Python34-x64"
-      PYTHON_VERSION: "3.4.x" # currently 3.4.3
-      PYTHON_ARCH: "64"
-      WINDOWS_SDK_VERSION: "v7.1"
-      TOXENV: "py34"
-      TOXPYTHON: "C:\\Python34-x64\\python.exe"
-
-    - PYTHON: "C:\\Python35"
-      PYTHON_VERSION: "3.5.x" # currently 3.5.0
-      PYTHON_ARCH: "32"
-      TOXENV: "py35"
-      TOXPYTHON: "C:\\Python35\\python.exe"
-
-    - PYTHON: "C:\\Python35-x64"
-      PYTHON_VERSION: "3.5.x" # currently 3.5.0
-      PYTHON_ARCH: "64"
-      WINDOWS_SDK_VERSION: "v7.1"  # This may be wrong
-      TOXENV: "py35"
-      TOXPYTHON: "C:\\Python35-x64\\python.exe"
-
-
 init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
 
@@ -81,7 +41,7 @@ install:
 build: off
 
 test_script:
-  - "%WITH_COMPILER% %PYTHON%/Scripts/tox.exe"
+  - ps: ls c:/Users/appveyor/pip/wheels
 
 after_test:
   - ps: ls c:/Users/appveyor/pip/wheels
