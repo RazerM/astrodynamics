@@ -34,7 +34,6 @@ init:
 install:
   - ps: New-Item -Force -ItemType directory -Path "C:/Users/appveyor/AppData/Local/pip/Cache/wheels"
   - ps: ls C:/Users/appveyor/AppData/Local/pip/Cache/wheels
-  - ps: Copy-Item -Path "./.appveyor/pip.ini" -Destination "c:/Users/appveyor/pip/pip.ini" -Force
   - "powershell .appveyor\\install.ps1"
 
 build: off
