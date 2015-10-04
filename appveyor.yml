@@ -1,5 +1,5 @@
 cache:
-  - C:\Users\appveyor\pip\wheels
+  - C:\Users\appveyor\AppData\Local\pip\Cache\wheels
 
 environment:
 
@@ -32,16 +32,13 @@ init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
 
 install:
-  - ps: if (Test-Path c:/Users/appveyor/pip/wheels) { ls c:/Users/appveyor/pip/wheels } else { echo Wheelhouse missing. }
-  - ps: New-Item -Force -ItemType directory -Path "c:/Users/appveyor/pip/wheels"
-  - ps: ls c:/Users/appveyor/pip/wheels
-  - ps: Copy-Item -Path "./.appveyor/pip.ini" -Destination "c:/Users/appveyor/pip/pip.ini" -Force
+  - ps: ls C:\Users\appveyor\AppData\Local\pip\Cache\wheels
   - "powershell .appveyor\\install.ps1"
 
 build: off
 
 test_script:
-  - ps: ls c:/Users/appveyor/pip/wheels
+  - ps: ls C:\Users\appveyor\AppData\Local\pip\Cache\wheels
 
 after_test:
   - ps: ls c:/Users/appveyor/pip/wheels
