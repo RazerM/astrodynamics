@@ -75,14 +75,14 @@ install:
   - powershell .appveyor\\install.ps1
   - pip install virtualenv>=13.1.2 wheel tox codecov
   - where pip
-  - %WITH_COMPILER% where pip
+  - "%WITH_COMPILER% where pip"
   - where tox
-  - %WITH_COMPILER% where tox
+  - "%WITH_COMPILER% where tox"
 
 build: off
 
 test_script:
-  - %WITH_COMPILER% tox -v
+  - "%WITH_COMPILER% tox -v"
   - ps: ls -R C:/Users/appveyor/AppData/Local/pip/Cache/wheels
 
 after_test:
