@@ -88,6 +88,7 @@ build: off
 
 test_script:
   - "%WITH_COMPILER% %PYTHON%/Scripts/tox.exe -v"
+  - "type C:\\projects\\astrodynamics\\.tox\\py27\\log\\py27-1.log"
   - "type C:\\projects\\astrodynamics\\.tox\\py27\\log\\py27-2.log"
 
 after_test:
