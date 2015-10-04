@@ -72,10 +72,12 @@ init:
   - "ECHO %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%"
 
 install:
+  - ps: ls -R C:/Users/appveyor/AppData/Local/pip/Cache/wheels
   - "powershell .appveyor\\install.ps1"
 
 build: off
 
 test_script:
   - "%WITH_COMPILER% %PYTHON%/Scripts/tox.exe -v"
+  - ps: ls -R C:/Users/appveyor/AppData/Local/pip/Cache/wheels
   - "type C:\\projects\\astrodynamics\\.tox\\%TOXENV%\\log\\%TOXENV%-2.log"
