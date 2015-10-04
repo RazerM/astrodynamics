@@ -68,25 +68,23 @@ environment:
 
 init:
   - set PATH=%PYTHON%;%PYTHON%\Scripts;%PATH%
-  # Show all environment variables
-  - set
 
 install:
   - ps: ls -R C:/Users/appveyor/AppData/Local/pip/Cache/wheels
   - "powershell .appveyor\\install.ps1"
-  - where python
-  - where pip
-  - where codecov
-  - where coverage
+  - pip install virtualenv>=13.1.2
+  - pip install wheel
+  - pip install tox
+  - pip install codecov
 
 build: off
 
 test_script:
-  - "%WITH_COMPILER% %PYTHON%/Scripts/tox.exe -v"
+  - "%WITH_COMPILER% tox -v"
   - ps: ls -R C:/Users/appveyor/AppData/Local/pip/Cache/wheels
-  - "type C:\\projects\\astrodynamics\\.tox\\%TOXENV%\\log\\%TOXENV%-2.log"
 
 after_test:
+  - "type C:\\projects\\astrodynamics\\.tox\\%TOXENV%\\log\\%TOXENV%-*.log"
   - "%PYTHON%/Scripts/codecov.exe"
 
 # Blacklist Travis branch used to test changes to config
