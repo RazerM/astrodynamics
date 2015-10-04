@@ -40,6 +40,3 @@ build: off
 
 test_script:
   - ps: ls C:/Users/appveyor/AppData/Local/pip/Cache/wheels
-
-after_test:
-  - ps: ls c:/Users/appveyor/pip/wheels
