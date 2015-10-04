@@ -20,6 +20,7 @@ environment:
       PYTHON_ARCH: "32"
       TOXENV: "py27"
       TOXPYTHON: "C:\\Python27\\python.exe"
+      TOXPIP: "C:\\Python27\\Scripts\\pip.exe"
 
     - PYTHON: "C:\\Python27-x64"
       PYTHON_VERSION: "2.7.x" # currently 2.7.9
@@ -27,12 +28,14 @@ environment:
       WINDOWS_SDK_VERSION: "v7.0"
       TOXENV: "py27"
       TOXPYTHON: "C:\\Python27-x64\\python.exe"
+      TOXPIP: "C:\\Python27-x64\\Scripts\\pip.exe"
 
     - PYTHON: "C:\\Python33"
       PYTHON_VERSION: "3.3.x" # currently 3.3.5
       PYTHON_ARCH: "32"
       TOXENV: "py33"
       TOXPYTHON: "C:\\Python33\\python.exe"
+      TOXPIP: "C:\\Python33\\Scripts\\pip.exe"
 
     - PYTHON: "C:\\Python33-x64"
       PYTHON_VERSION: "3.3.x" # currently 3.3.5
@@ -40,12 +43,14 @@ environment:
       WINDOWS_SDK_VERSION: "v7.1"
       TOXENV: "py33"
       TOXPYTHON: "C:\\Python33-x64\\python.exe"
+      TOXPIP: "C:\\Python33-x64\\Scripts\\pip.exe"
 
     - PYTHON: "C:\\Python34"
       PYTHON_VERSION: "3.4.x" # currently 3.4.3
       PYTHON_ARCH: "32"
       TOXENV: "py34"
       TOXPYTHON: "C:\\Python34\\python.exe"
+      TOXPIP: "C:\\Python34\\Scripts\\pip.exe"
 
     - PYTHON: "C:\\Python34-x64"
       PYTHON_VERSION: "3.4.x" # currently 3.4.3
@@ -53,12 +58,14 @@ environment:
       WINDOWS_SDK_VERSION: "v7.1"
       TOXENV: "py34"
       TOXPYTHON: "C:\\Python34-x64\\python.exe"
+      TOXPIP: "C:\\Python34-x64\\Scripts\\pip.exe"
 
     - PYTHON: "C:\\Python35"
       PYTHON_VERSION: "3.5.x" # currently 3.5.0
       PYTHON_ARCH: "32"
       TOXENV: "py35"
       TOXPYTHON: "C:\\Python35\\python.exe"
+      TOXPIP: "C:\\Python35\\Scripts\\pip.exe"
 
     - PYTHON: "C:\\Python35-x64"
       PYTHON_VERSION: "3.5.x" # currently 3.5.0
@@ -66,6 +73,7 @@ environment:
       WINDOWS_SDK_VERSION: "v7.1"  # This may be wrong
       TOXENV: "py35"
       TOXPYTHON: "C:\\Python35-x64\\python.exe"
+      TOXPIP: "C:\\Python35-x64\\Scripts\\pip.exe"
 
 
 init:
