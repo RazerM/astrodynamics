@@ -83,7 +83,7 @@ test_script:
 
 after_test:
   - type C:\\projects\\astrodynamics\\.tox\\%TOXENV%\\log\\%TOXENV%-*.log
-  - codecov
+  - codecov --env APPVEYOR PYTHON_ARCH TOXENV
   - "%WITH_COMPILER% python setup.py bdist_wheel"
   - "%WITH_COMPILER% python setup.py bdist_wininst"
   - "%WITH_COMPILER% python setup.py bdist_msi"
