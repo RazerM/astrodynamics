@@ -81,10 +81,6 @@ function main () {
     InstallPip $env:PYTHON
     InstallPackage $env:PYTHON wheel
     InstallPackage $env:PYTHON tox
-    $pip_path = $env:PYTHON + "/Scripts/pip.exe"
-    & $pip_path install -v logbook
-    & $pip_path uninstall -v -y logbook
-    & $pip_path install -v logbook
 }
 
 main
