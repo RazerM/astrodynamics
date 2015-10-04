@@ -74,10 +74,10 @@ init:
 install:
   - ps: ls -R C:/Users/appveyor/AppData/Local/pip/Cache/wheels
   - "powershell .appveyor\\install.ps1"
-  - which python
-  - which pip
-  - which codecov
-  - which coverage
+  - where python
+  - where pip
+  - where codecov
+  - where coverage
 
 build: off
 
