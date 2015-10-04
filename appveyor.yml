@@ -67,12 +67,17 @@ environment:
 
 
 init:
+  - echo %PYTHON% %PYTHON_VERSION% %PYTHON_ARCH%
   - set PATH=%PYTHON%;%PYTHON%\Scripts;%PATH%
 
 install:
   - ps: ls -R C:/Users/appveyor/AppData/Local/pip/Cache/wheels
   - powershell .appveyor\\install.ps1
   - pip install virtualenv>=13.1.2 wheel tox codecov
+  - where pip
+  - %WITH_COMPILER% where pip
+  - where tox
+  - %WITH_COMPILER% where tox
 
 build: off
 
