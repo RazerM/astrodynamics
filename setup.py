@@ -2,6 +2,7 @@
 from __future__ import absolute_import, division, print_function
 
 import re
+import sys
 
 from setuptools import setup, Command, find_packages
 
@@ -18,10 +19,19 @@ AUTHOR = metadata['author']
 EMAIL = metadata['email']
 
 requires = [
+    'appdirs',
     'astropy',
+    'colorama',
+    'docopt',
     'numpy',
-    'represent>=1.4.0'
+    'progress',
+    'represent>=1.4.0',
+    'requests',
+    'six',
 ]
+
+if sys.version_info[:2] < (3, 4):
+    requires.append('pathlib')
 
 extras_require = {
     'dev': [
