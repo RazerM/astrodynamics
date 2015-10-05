@@ -12,3 +12,7 @@ NaN
 organisation
 organisational
 parsable
+kB
+KiB
+MiB
+Moiron
