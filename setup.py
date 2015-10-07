@@ -42,6 +42,7 @@ extras_require = {
         'pep8-naming',
         'plumbum',
         'pytest>=2.7.3',
+        'responses',
         'shovel',
         'sphinx',
         'sphinx_rtd_theme',
@@ -50,6 +51,9 @@ extras_require = {
         'watchdog',
     ],
 }
+
+if sys.version_info[:2] < (3, 3):
+    extras_require['dev'].append('mock')
 
 
 class PyTest(Command):
