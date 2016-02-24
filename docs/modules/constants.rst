@@ -72,8 +72,12 @@ NEPTUNE_MASS                       :math:`1.0243093 \times 10^{26} \; \mathrm{kg
 PLUTO_MASS                         :math:`1.4560109 \times 10^{22} \; \mathrm{kg}`                      N/A
 WGS84_EQUATORIAL_RADIUS            :math:`6378137 \; \mathrm{m}`                                        0
 WGS84_FLATTENING                   :math:`0.0033528107 \; \mathrm{}`                                    0
-WGS84_MU                           :math:`3.9860044 \times 10^{14} \; \mathrm{\frac{m^{3}}{s^{2}}}`     0
+WGS84_MU                           :math:`3.9860044 \times 10^{14} \; \mathrm{\frac{m^{3}}{s^{2}}}`     0.008
 WGS84_ANGULAR_VELOCITY             :math:`7.292115 \times 10^{-5} \; \mathrm{\frac{rad}{s}}`            0
+WGS72_EQUATORIAL_RADIUS            :math:`6378135 \; \mathrm{m}`                                        5
+WGS72_FLATTENING                   :math:`0.0033527795 \; \mathrm{}`                                    6e-08
+WGS72_MU                           :math:`398600.5 \; \mathrm{\frac{km^{3}}{s^{2}}}`                    0.4
+WGS72_ANGULAR_VELOCITY             :math:`7.2921151 \times 10^{-5} \; \mathrm{\frac{rad}{s}}`           1e-14
 =================================  ===================================================================  =============
 
 References
@@ -132,6 +136,10 @@ WGS84_EQUATORIAL_RADIUS            WGS84 semi-major axis                        
 WGS84_FLATTENING                   WGS84 Earth flattening factor                    World Geodetic System 1984
 WGS84_MU                           WGS84 geocentric gravitational constant          World Geodetic System 1984
 WGS84_ANGULAR_VELOCITY             WGS84 nominal earth mean angular velocity        World Geodetic System 1984
+WGS72_EQUATORIAL_RADIUS            WGS72 semi-major axis                            World Geodetic System 1972
+WGS72_FLATTENING                   WGS72 Earth flattening factor                    World Geodetic System 1972
+WGS72_MU                           WGS72 geocentric gravitational constant          World Geodetic System 1972
+WGS72_ANGULAR_VELOCITY             WGS72 nominal earth mean angular velocity        World Geodetic System 1972
 =================================  ===============================================  ===============================================================
 
 .. _`license`: https://raw.githubusercontent.com/python-astrodynamics/astrodynamics/master/licenses/ASTROPY_LICENSE.txt

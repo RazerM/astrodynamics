@@ -5,8 +5,9 @@ from astropy.units import Quantity
 from represent import ReprHelperMixin
 
 from ..constants import (
-    WGS84_ANGULAR_VELOCITY, WGS84_EQUATORIAL_RADIUS, WGS84_FLATTENING,
-    WGS84_MU)
+    WGS72_ANGULAR_VELOCITY, WGS72_EQUATORIAL_RADIUS, WGS72_FLATTENING,
+    WGS72_MU, WGS84_ANGULAR_VELOCITY, WGS84_EQUATORIAL_RADIUS,
+    WGS84_FLATTENING, WGS84_MU)
 from ..util import read_only_property, verify_unit
 
 __all__ = (
@@ -78,3 +79,9 @@ wgs84 = ReferenceEllipsoid(
     f=WGS84_FLATTENING,
     mu=WGS84_MU,
     spin=WGS84_ANGULAR_VELOCITY)
+
+wgs72 = ReferenceEllipsoid(
+    a=WGS72_EQUATORIAL_RADIUS,
+    f=WGS72_FLATTENING,
+    mu=WGS72_MU,
+    spin=WGS72_ANGULAR_VELOCITY)

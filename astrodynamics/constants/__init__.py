@@ -61,11 +61,15 @@ from .iau import (
     NEPTUNE_MASS,
     PLUTO_MASS,
 )
-from .wgs84 import (
+from .wgs import (
     WGS84_EQUATORIAL_RADIUS,
     WGS84_FLATTENING,
     WGS84_MU,
     WGS84_ANGULAR_VELOCITY,
+    WGS72_EQUATORIAL_RADIUS,
+    WGS72_FLATTENING,
+    WGS72_MU,
+    WGS72_ANGULAR_VELOCITY,
 )
 
 __all__ = (
@@ -131,4 +135,8 @@ __all__ = (
     'WGS84_FLATTENING',
     'WGS84_MU',
     'WGS84_ANGULAR_VELOCITY',
+    'WGS72_EQUATORIAL_RADIUS',
+    'WGS72_FLATTENING',
+    'WGS72_MU',
+    'WGS72_ANGULAR_VELOCITY',
 )

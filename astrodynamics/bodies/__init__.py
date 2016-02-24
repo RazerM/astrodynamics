@@ -13,7 +13,7 @@ from .celestialbody import (
     uranus,
     venus
 )
-from .ellipsoid import Ellipsoid, ReferenceEllipsoid, wgs84
+from .ellipsoid import Ellipsoid, ReferenceEllipsoid, wgs72, wgs84
 
 __all__ = (
     'CelestialBody',
