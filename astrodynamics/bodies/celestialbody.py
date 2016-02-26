@@ -75,6 +75,12 @@ class CelestialBody(ReprHelperMixin, object):
         r.keyword_with_value('mu', self.mu.view(Quantity))
         r.keyword_from_attr('naif_id', '_naif_id')
 
+    def __copy__(self):
+        cls = self.__class__
+        celestial_body = cls.__new__(cls)
+        celestial_body.__dict__.update(self.__dict__)
+        return celestial_body
+
 G = CONSTANT_OF_GRAVITATION
 
 mercury = CelestialBody(

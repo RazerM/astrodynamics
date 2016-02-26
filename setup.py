@@ -23,6 +23,7 @@ requires = [
     'networkx>=1.11',
     'numpy',
     'represent>=1.4.0',
+    'sgp4>=1.4',
 ]
 
 extras_require = {

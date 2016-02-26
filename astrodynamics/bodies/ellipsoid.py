@@ -1,6 +1,7 @@
 # coding: utf-8
 from __future__ import absolute_import, division, print_function
 
+import sgp4.earth_gravity
 from astropy.units import Quantity
 from represent import ReprHelperMixin
 
@@ -59,11 +60,21 @@ class ReferenceEllipsoid(Ellipsoid):
         f: Flattening [-]
         mu: Standard gravitational parameter [m\ :sup:`3`\ ·s\ :sup:`-2`]
         spin: Spin rate [rad/s]
+
+    .. attribute:: _sgp4_constants
+
+        Can be assigned an instance of :class:`sgp4.earth_gravity.EarthGravity`
+        for compatibility as a gravity model for the
+        :class:`~astrodynamics.propagation.sgp4.SGP4` propagator. This
+        attribute is private as it should not be used by end-users. It is
+        nonetheless part of the documented API.
     """
     def __init__(self, a, f, mu, spin):
         super(ReferenceEllipsoid, self).__init__(a=a, f=f)
         self._mu = verify_unit(mu, 'm3 / s2')
         self._spin = verify_unit(spin, 'rad / s')
+
+        self._sgp4_constants = None
 
     mu = read_only_property('_mu', 'Standard gravitational parameter')
     spin = read_only_property('_spin', 'Angular velocity')
@@ -80,8 +91,12 @@ wgs84 = ReferenceEllipsoid(
     mu=WGS84_MU,
     spin=WGS84_ANGULAR_VELOCITY)
 
+wgs84._sgp4_constants = sgp4.earth_gravity.wgs84
+
 wgs72 = ReferenceEllipsoid(
     a=WGS72_EQUATORIAL_RADIUS,
     f=WGS72_FLATTENING,
     mu=WGS72_MU,
     spin=WGS72_ANGULAR_VELOCITY)
+
+wgs72._sgp4_constants = sgp4.earth_gravity.wgs72
